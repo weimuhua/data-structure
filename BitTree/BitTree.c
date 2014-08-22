@@ -118,12 +118,18 @@ Stack createStack(int n)
 
 int isEmpty(Stack s)
 {
-	return s->topofstack == -1;
+	if(s->topofstack == -1)
+		return 1;
+	else
+		return 0;
 }
 
 int isFull(Stack s)
 {
-	return s->topofstack == s->capacity-1;
+	if(s->topofstack == s->capacity-1)
+		return 1;
+	else
+		return 0;
 }
 
 void Push(Stack s,TreeNode* node)
@@ -150,4 +156,42 @@ TreeNode* Pop(Stack s)
 	}
 }
 
+void preOrder(Tree T)
+{
+	Stack s = createStack(20);
+	Tree t = T;
+	while( t!=NULL || !isEmpty(s) )
+	{
+		if(t)
+		{
+			printf("%d\t",t->data);
+			Push(s,t);
+			t = t->left;
+		}
+		else
+		{
+			t = Pop(s);
+			t = t->right;
+		}
+	}
+}
 
+void inOrder(Tree T)
+{
+	Stack s = createStack(20);
+	Tree t = T;
+	while( t!=NULL || !isEmpty(s) )
+	{
+		if(t)
+		{
+			Push(s,t);
+			t = t->left;
+		}
+		else
+		{
+			t = Pop(s);
+			printf("%d\t",t->data);
+			t = t->right;
+		}
+	}
+}

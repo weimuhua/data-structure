@@ -29,3 +29,5 @@ int isEmpty(Stack s);
 int isFull(Stack s);
 void Push(Stack s,TreeNode* node);
 TreeNode* Pop(Stack s);
+void preOrder(Tree T);
+void inOrder(Tree T);
