@@ -15,8 +15,8 @@ TreeNode* Find(int x,Tree T)
 {
     if(T != NULL)
     {
-        if(T->data == x)
-                return T;
+		if(T->data == x)
+			return T;
         else if(T->data > x)
                 return Find(x,T->left);
         else if(T->data < x)
@@ -149,3 +149,5 @@ TreeNode* Pop(Stack s)
 		return node;
 	}
 }
+
+
