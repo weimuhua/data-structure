@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct StackRecord
 {
@@ -14,4 +15,7 @@ int isEmpty(Stack s);
 int isFull(Stack s);
 void Push(Stack s,char c);
 char Pop(Stack s);
-void ExpEvaluation(char* str);
+int ExpEvaluation(char* str);
+int priority(char c);
+int calculate(int a,int b,char c);
+void cal(Stack s1,Stack s2);

@@ -2,9 +2,8 @@
 
 int main(int argc,char* argv[])
 {
-	Stack s = createStack(10);
-	Push(s,'a');
-	Push(s,'b');
-	printf("%c\t%c\n",Pop(s),Pop(s));
+	char* str = "5+8*(3-2)-6/2";
+	printf("calculate str:%s\n",str);
+	printf("result is %d.\n",ExpEvaluation(str));
 	return 0;
 }
