@@ -60,6 +60,7 @@ TreeNode* Insert(int x,Tree T)
     {
         T = (Tree)malloc(sizeof(TreeNode));
         T->data = x;
+		T->bepushed = 0;
         T->left=T->right=NULL;
     }
     else if(T->data > x)
@@ -192,6 +193,38 @@ void inOrder(Tree T)
 			t = Pop(s);
 			printf("%d\t",t->data);
 			t = t->right;
+		}
+	}
+}
+
+void postOrder(Tree T)
+{
+	Stack s = createStack(20);
+	TreeNode* t = T;
+	if(T != NULL)
+	{
+		Push(s,T);
+	}
+	while(!isEmpty(s))
+	{
+		t = Pop(s);
+		Push(s,t);
+		if(t->bepushed)
+		{
+			printf("%d\t",t->data);
+			Pop(s);
+		}
+		else
+		{
+			if(t->right)
+			{
+				Push(s,t->right);
+			}
+			if(t->left)
+			{
+				Push(s,t->left);
+			}
+			t->bepushed = 1;
 		}
 	}
 }

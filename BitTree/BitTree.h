@@ -4,6 +4,7 @@
 typedef struct TreeNode
 {
     int data;
+	int bepushed;
     struct TreeNode* left;
     struct TreeNode* right;
 }TreeNode;
@@ -31,3 +32,4 @@ void Push(Stack s,TreeNode* node);
 TreeNode* Pop(Stack s);
 void preOrder(Tree T);
 void inOrder(Tree T);
+void postOrder(Tree T);

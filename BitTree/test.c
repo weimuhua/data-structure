@@ -17,11 +17,8 @@ int main(int argc,char* argv[])
 	printf("InOrder:\n");
 	inOrder(T);
 	printf("\n");
-	T = Delete(2,T);
-	printf("Delete 2...\n");
-	T = Delete(7,T);
-	printf("Delete 7...\n");
-	printf("Max = %d\n",FindMax(T));
-	printf("Minimum = %d\n",FindMin(T));
+	printf("PostOrder:\n");
+	postOrder(T);
+	printf("\n");
 	return 0;
 }
