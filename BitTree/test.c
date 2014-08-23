@@ -9,6 +9,7 @@ int main(int argc,char* argv[])
 	T = Insert(4,T);
 	T = Insert(6,T);
 	T = Insert(7,T);
+	T = Insert(1,T);
 	printf("Max = %d\n",FindMax(T));
 	printf("Minimum = %d\n",FindMin(T));
 	printf("PreOrder:\n");
@@ -20,5 +21,7 @@ int main(int argc,char* argv[])
 	printf("PostOrder:\n");
 	postOrder(T);
 	printf("\n");
+	printf("find the lowest ancestor between 1 and 7:\n");
+	printf("%d\n",findLowestAncestor(T,1,7));
 	return 0;
 }

@@ -33,3 +33,4 @@ TreeNode* Pop(Stack s);
 void preOrder(Tree T);
 void inOrder(Tree T);
 void postOrder(Tree T);
+int findLowestAncestor(Tree T,int x,int y);

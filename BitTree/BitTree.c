@@ -228,3 +228,26 @@ void postOrder(Tree T)
 		}
 	}
 }
+
+
+int findLowestAncestor(Tree T,int x,int y)
+{
+	if(T == NULL)
+	{
+		printf("The tree is empty...\n");
+		return 0;
+	}
+	else
+	{
+		if( T->data > x && T->data > y )
+		{
+			return findLowestAncestor(T->left,x,y);
+		}
+		else if( T->data < x && T->data < y )
+		{
+			return findLowestAncestor(T->right,x,y);
+		}
+		else
+			return T->data;
+	}
+}
