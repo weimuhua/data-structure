@@ -1,6 +1,11 @@
-#include "LinkList.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-//创建一个带头指针的链表
+typedef struct node
+{
+	int data;
+	struct node* next;
+}node;
 node* createLinkList(int num)
 {
 	node *p,*q;
@@ -17,4 +22,17 @@ node* createLinkList(int num)
 		p = q;
 	}
 	return head;
+}
+
+int main(int argc,char* argv[])
+{
+	node* head = createLinkList(10);
+	head = head->next;
+	while(head)
+	{
+		printf("%d\t",head->data);
+		head = head->next;
+	}
+	printf("\n");
+	return 0;
 }
