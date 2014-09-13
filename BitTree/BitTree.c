@@ -208,14 +208,13 @@ void postOrder(Tree T)
 	while(!isEmpty(s))
 	{
 		t = Pop(s);
-		Push(s,t);
 		if(t->bepushed)
 		{
 			printf("%d\t",t->data);
-			Pop(s);
 		}
 		else
 		{
+			Push(s,t);
 			if(t->right)
 			{
 				Push(s,t->right);
