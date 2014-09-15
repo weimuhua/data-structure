@@ -14,16 +14,11 @@ int main(int argc,char** argv)
 void StraightInsertionSort(int *arr)
 {
 	int i,j,temp;
-	for(i = 1;i<len;i++)
+	for(i = 1;i < len;i++)
 	{
-		if(arr[i - 1] > arr[i])
+		for(j = i - 1;j >= 0 && arr[j] > arr[j + 1];j--)
 		{
-			temp = arr[i];
-			for(j = i - 1;j>=0 && arr[j] > temp;j--)
-			{
-				arr[j + 1] = arr[j];
-			}
-			arr[j + 1] = temp;
+			swap(&arr[j],&arr[j + 1]);
 		}
 	}
 }
