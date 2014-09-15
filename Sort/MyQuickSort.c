@@ -21,12 +21,10 @@ int Partition(int *arr,int left,int right)
 	{
 		if(arr[i] < arr[right])
 		{
-			swap(&arr[i],&arr[small]);
-			small++;
+			swap(&arr[i],&arr[small++]);
 		}
 	}
 	swap(&arr[small],&arr[right]);
-	small++;
 	return small;
 }
 
