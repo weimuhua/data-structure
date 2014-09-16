@@ -152,17 +152,14 @@ int partition(int *arr,int left,int right)
 	int i = (left + right)/2;
 	int small = left;
 	swap(&arr[i],&arr[right]);
-	printf("arr[right]:%d\n",arr[right]);
 	for(i = left;i < right;i++)
 	{
 		if(arr[i] < arr[right])
 		{
 			swap(&arr[i],&arr[small++]);
-			printf("swap:arr[%d]=%d,arr[%d]=%d\n",i,arr[i],small,arr[small]);
 		}
 	}
 	swap(&arr[small],&arr[right]);
-	printf("swap:arr[%d]=%d,arr[%d]=%d\n",small,arr[small],right,arr[right]);
 	printf("return %d\n",small);
 	return small;
 }
