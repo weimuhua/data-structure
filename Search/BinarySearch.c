@@ -1,6 +1,6 @@
-#include "Sort.h"
+#include "Search.h"
 
-int BinarySearch(int* arr,int length,int v);
+int BinarySearch(int* arr,int len,int v);
 
 int main(int argc,char** argv)
 {
@@ -9,27 +9,19 @@ int main(int argc,char** argv)
 	return 0;
 }
 
-int BinarySearch(int* arr,int length,int v)
+int BinarySearch(int* arr,int len,int v)
 {
-	int left,right,middle;
-	left = -1,right = length;
-
-	while(left + 1 != right)
+	int low,high,mid;
+	low = 0;
+	high = len;
+	while(low <= high)
 	{
-		middle = left + (right - left)/2;
-		if(arr[middle] < v)
-		{
-			left = middle;
-		}
+		mid = (low + high)/2;
+		if(arr[mid] == v)
+			return mid;
+		else if(v < arr[mid])
+			high = mid - 1;
 		else
-		{
-			right = middle;
-		}
+			low = mid + 1;
 	}
-
-	if(right >= length || arr[right] != v)
-	{
-		right = -1;
-	}
-	return right;
 }
