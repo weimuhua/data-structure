@@ -1,5 +1,31 @@
 #include "BitTree.h"
 
+int findMaxHeight(Tree T)
+{
+	int height = 0,maxHeight = 0;
+	Stack s = createStack(10);
+	while(T != NULL || !isEmpty(s))
+	{
+		if(T)
+		{
+			height++;
+			if(height > maxHeight)
+			{
+				maxHeight = height;
+			}
+			Push(s,T);
+			T = T->left;
+		}
+		else
+		{
+			height--;
+			T = Pop(s);
+			T = T->right;
+		}
+	}
+	return maxHeight;
+}
+
 Tree MakeEmpty(Tree T)
 {
     if(T!=NULL)

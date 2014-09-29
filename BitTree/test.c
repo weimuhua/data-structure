@@ -10,6 +10,7 @@ int main(int argc,char* argv[])
 	T = Insert(6,T);
 	T = Insert(7,T);
 	T = Insert(1,T);
+	printf("findMaxHeight = %d\n",findMaxHeight(T));
 	printf("Max = %d\n",FindMax(T));
 	printf("Minimum = %d\n",FindMin(T));
 	printf("PreOrder:\n");

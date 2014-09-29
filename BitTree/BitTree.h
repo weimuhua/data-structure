@@ -34,3 +34,4 @@ void preOrder(Tree T);
 void inOrder(Tree T);
 void postOrder(Tree T);
 int findLowestAncestor(Tree T,int x,int y);
+int findMaxHeight(Tree T);
