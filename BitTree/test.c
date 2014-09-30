@@ -12,6 +12,7 @@ int main(int argc,char* argv[])
 	T = Insert(1,T);
 	preorder(T);
 	printf("\n");
+	printf("level:%d\n",level(T));
 	printf("findMaxHeight = %d\n",findMaxHeight(T));
 	printf("Max = %d\n",FindMax(T));
 	printf("Minimum = %d\n",FindMin(T));

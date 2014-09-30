@@ -1,5 +1,18 @@
 #include "BitTree.h"
 
+int level(Tree T)
+{
+	int l1 = 0,l2 = 0;
+	if(T == NULL)
+		return 0;
+	else
+	{
+		l1 = level(T->left);
+		l2 = level(T->right);
+		return l1 > l2 ? l1 + 1 : l2 + 1;
+	}
+}
+
 void preorder(Tree T)
 {
 	if(T)

@@ -18,6 +18,7 @@ typedef struct StackRecord
 }StackRecord;
 typedef struct StackRecord* Stack;
 
+int level(Tree T);
 Tree MakeEmpty(Tree T);
 TreeNode* Find(int x,Tree T);
 int FindMax(Tree T);
