@@ -31,6 +31,7 @@ int isFull(Stack s);
 void Push(Stack s,TreeNode* node);
 TreeNode* Pop(Stack s);
 void preOrder(Tree T);
+void preorder(Tree T);
 void inOrder(Tree T);
 void postOrder(Tree T);
 int findLowestAncestor(Tree T,int x,int y);

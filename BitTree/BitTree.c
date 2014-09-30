@@ -1,5 +1,15 @@
 #include "BitTree.h"
 
+void preorder(Tree T)
+{
+	if(T)
+	{
+		printf("%d\t",T->data);
+		preorder(T->left);
+		preorder(T->right);
+	}
+}
+
 int findMaxHeight(Tree T)
 {
 	int height = 0,maxHeight = 0;
