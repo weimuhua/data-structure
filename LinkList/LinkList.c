@@ -10,6 +10,8 @@ typedef struct node
 node* createLinkList(int num);
 void deleteNode(node* head,node* toBeDeleted);
 void printList(node* head);
+void findKthToTail(node* head,int k);
+node* reverseList(node* head);
 
 int main(int argc,char* argv[])
 {
@@ -17,7 +19,54 @@ int main(int argc,char* argv[])
 	printList(head);
 	deleteNode(head,head->next->next);
 	printList(head);
+	findKthToTail(head,5);
+	head = reverseList(head);
+	printList(head);
 	return 0;
+}
+
+node* reverseList(node* head)
+{
+	if(head == NULL || head->next == NULL)
+		return;
+    node* pReversedHead = head;
+	head = head->next;
+	pReversedHead->next = NULL;
+    node* pNode = head;
+    node* pPrev = NULL;
+	node* pNext = NULL;
+    while(pNode != NULL)
+    {
+   		pNext = pNode->next;
+        pNode->next = pPrev;
+        pPrev = pNode;
+        pNode = pNext;
+		if(pNode == NULL)
+		{
+			pReversedHead->next = pPrev;
+		}
+    }
+    return pReversedHead;
+}
+
+void findKthToTail(node* head,int k)
+{
+	node* ahead = head;
+	node* behind = NULL;
+	ahead = head->next;
+	int i;
+	for(i = 0;i < k;i++)
+	{
+		if(ahead->next != NULL)
+			ahead = ahead->next;
+	}
+	behind = head->next;
+	while(ahead->next != NULL)
+	{
+		ahead = ahead->next;
+		behind = behind->next;
+	}
+	printf("%d to tail:%d\n",k,behind->data);
 }
 
 void printList(node* head)
