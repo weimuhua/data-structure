@@ -18,6 +18,8 @@ typedef struct StackRecord
 }StackRecord;
 typedef struct StackRecord* Stack;
 
+int hasSubTree(Tree root1,Tree root2);
+int doesTree1HaveTree2(Tree tree1,Tree tree2);
 int level(Tree T);
 Tree MakeEmpty(Tree T);
 TreeNode* Find(int x,Tree T);

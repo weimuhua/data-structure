@@ -1,5 +1,36 @@
 #include "BitTree.h"
 
+//判断root2是否为root1的子结构
+int hasSubTree(Tree root1,Tree root2)
+{
+	int result = 0;
+	if(root1 != NULL && root2 != NULL)
+	{
+		if(root1->data == root2->data)
+		{
+			result = doesTree1HaveTree2(root1,root2);
+		}
+	if(!result)
+		result = hasSubTree(root1->left,root2);
+	if(!result)
+		result = hasSubTree(root1->right,root2);
+	}
+	return result;
+}
+
+int doesTree1HaveTree2(Tree tree1,Tree tree2)
+{
+	if(tree2 == NULL)
+		return 1;
+	if(tree1 == NULL)
+		return 0;
+	if(tree1->data != tree2->data)
+		return 0;
+	
+	return doesTree1HaveTree2(tree1->left,tree2->left) 
+				&& doesTree1HaveTree2(tree1->right,tree2->right);
+}
+
 int level(Tree T)
 {
 	int l1 = 0,l2 = 0;
