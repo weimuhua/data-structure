@@ -1,5 +1,19 @@
 #include "BitTree.h"
 
+//二叉树的镜像
+void mirrorReverse(Tree T)
+{
+	if(T == NULL || (T->left == NULL && T->right == NULL))
+		return;
+	TreeNode* temp = T->left;
+	T->left = T->right;
+	T->right = temp;
+	if(T->left)
+		mirrorReverse(T->left);
+	if(T->right)
+		mirrorReverse(T->right);
+}
+
 //判断root2是否为root1的子结构
 int hasSubTree(Tree root1,Tree root2)
 {

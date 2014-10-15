@@ -28,5 +28,8 @@ int main(int argc,char* argv[])
 	printf("find the lowest ancestor between 1 and 7:\n");
 	printf("%d\n",findLowestAncestor(T,1,7));
 	printf("hasSubTree:%d\n",hasSubTree(T,T));
+	mirrorReverse(T);
+	preOrder(T);
+	printf("\n");
 	return 0;
 }
