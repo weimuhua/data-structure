@@ -85,7 +85,7 @@ int main()
 	
 	if(!device)
 	{
-		printf("Error!\n");
+		printf("Open Device Error!\n");
 		exit(1);
 	}
 	
