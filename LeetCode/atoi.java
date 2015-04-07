@@ -1,5 +1,5 @@
 /**
- * Created by baidu on 15/3/31.
+ * implemantation of atoi in Java.
  */
 public class Test {
     public static void main(String args[]) {
